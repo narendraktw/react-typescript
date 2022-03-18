@@ -1,8 +1,6 @@
+import { Name } from "./Person.types";
 type PersonProps = {
-	name: {
-		first: string;
-		last: string;
-	};
+	name: Name;
 };
 const Person = (props: PersonProps) => {
 	const { first, last } = props.name;
