@@ -8,10 +8,14 @@ import Input from "./components/Input";
 import Oscar from "./components/Oscar";
 import Person from "./components/Person";
 import PersonList from "./components/PersonList";
+import Box from "./components/context/Box";
+import { ThemeContextProvider } from "./components/context/ThemeContext";
+import { UserContextProvider } from "./components/context/UserContext";
 import Counter from "./components/state/Counter";
 import LoggedIn from "./components/state/LoggedIn";
-import User from "./components/state/User";
+import User from "./components/context/User";
 import Status from "./components/Status";
+
 function App() {
 	const personName = {
 		first: "Narendra",
@@ -34,7 +38,7 @@ function App() {
 	];
 	return (
 		<div className="App">
-			<Greet name="Narendra" messageCount={20} isLoggedIn={true} />
+			{/* <Greet name="Narendra" messageCount={20} isLoggedIn={true} />
 			<Person name={personName} />
 			<PersonList name={nameList} />
 			<Status status="success" />
@@ -49,7 +53,13 @@ function App() {
 			<Container styles={{ border: "1px solid red", padding: "1rem" }} />
 			<LoggedIn />
 			<User />
-			<Counter />
+			<Counter /> */}
+			<ThemeContextProvider>
+				<Box />
+			</ThemeContextProvider>
+			<UserContextProvider>
+				<User />
+			</UserContextProvider>
 		</div>
 	);
 }
