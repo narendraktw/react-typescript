@@ -15,6 +15,10 @@ import Counter from "./components/state/Counter";
 import LoggedIn from "./components/state/LoggedIn";
 import User from "./components/context/User";
 import Status from "./components/Status";
+import DomRef from "./components/ref/DomRef";
+import MutableRef from "./components/ref/MutableRef";
+import Private from "./components/auth/Private";
+import Profile from "./components/auth/Profile";
 
 function App() {
 	const personName = {
@@ -54,12 +58,15 @@ function App() {
 			<LoggedIn />
 			<User />
 			<Counter /> */}
-			<ThemeContextProvider>
+			{/* <ThemeContextProvider>
 				<Box />
 			</ThemeContextProvider>
 			<UserContextProvider>
 				<User />
-			</UserContextProvider>
+			</UserContextProvider> */}
+			{/* <DomRef />
+			<MutableRef /> */}
+			<Private isLoggedIn={true} component={Profile} />
 		</div>
 	);
 }
