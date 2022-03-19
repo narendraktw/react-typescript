@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 type ButtonProps = {
 	handleClick: (event: React.MouseEvent<HTMLButtonElement>, id: number) => void;
